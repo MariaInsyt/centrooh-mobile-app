@@ -10,7 +10,6 @@ import {
   TextInput,
   Modal,
   Pressable,
-  RefreshControl,
 } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
@@ -20,14 +19,7 @@ import moment from "moment";
 
 const Home = props => {
   const { navigation } = props;
-  const [billboards, setBillboards] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
-  const [filteredBilboards, setFilteredBillboards] = useState([]);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [refreshing, setRefreshing] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
-
-
   return (
     <SafeAreaView
       style={{
@@ -154,7 +146,7 @@ const Home = props => {
         >
           <View style={styles.Boxes}>
             <Image
-              source={require("../assets/image/total.jpg")}
+              source={require("../assets/image/Kampala00460.png")}
               style={{ width: 150, height: 180, marginLeft: 20, marginTop: 5 }}
             />
             <View style={{ width: 200 }}>
@@ -165,13 +157,13 @@ const Home = props => {
                 <Text style={styles.ButtonText}>Not Updated</Text>
               </TouchableOpacity>
               <View style={{ width: 180, marginLeft: 30 }}>
-                <Text>Total Najanakumbi</Text>
+                <Text>Kampala00037</Text>
                 <Text> </Text>
                 <Text>Location: Najjanakumbi</Text>
                 <Text> </Text>
                 <Text>Address: Entebbe road</Text>
                 <Text> </Text>
-                <Text>Trading Area: Entebbe Stretch</Text>
+                <Text>Last Update: 2 days ago</Text>
               </View>
             </View>
           </View>
@@ -183,7 +175,7 @@ const Home = props => {
         >
           <View style={styles.Boxes}>
             <Image
-              source={require("../assets/image/shell.jpg")}
+              source={require("../assets/image/kampala00869.png")}
               style={{ width: 150, height: 180, marginLeft: 20, marginTop: 5 }}
             />
             <View style={{ width: 200 }}>
@@ -191,13 +183,13 @@ const Home = props => {
                 <Text style={styles.UpdatedButtonText}>Updated</Text>
               </TouchableOpacity>
               <View style={{ width: 180, marginLeft: 30 }}>
-                <Text>Shell Najanakumbi</Text>
+                <Text>kampala00869</Text>
                 <Text> </Text>
                 <Text>Location: Najjanakumbi</Text>
                 <Text> </Text>
                 <Text>Address: Entebbe road</Text>
                 <Text> </Text>
-                <Text>Trading Area: Entebbe Stretch</Text>
+                <Text>Last Update: 2 days ago</Text>
               </View>
             </View>
           </View>
@@ -209,7 +201,7 @@ const Home = props => {
         >
           <View style={styles.Boxes}>
             <Image
-              source={require("../assets/image/oryx.jpg")}
+              source={require("../assets/image/Kampala00926.png")}
               style={{ width: 150, height: 180, marginLeft: 20, marginTop: 5 }}
             />
             <View style={{ width: 200 }}>
@@ -217,13 +209,13 @@ const Home = props => {
                 <Text style={styles.UpdatedButtonText}>Updated!</Text>
               </TouchableOpacity>
               <View style={{ width: 180, marginLeft: 30 }}>
-                <Text>Oryx Bukoto</Text>
+                <Text>Kampala00926</Text>
                 <Text> </Text>
                 <Text>Location: Bukoto</Text>
                 <Text> </Text>
                 <Text>Address: Lugogo Bypass</Text>
                 <Text> </Text>
-                <Text>Trading Area: Central CBD</Text>
+                <Text>Last Update: 2 days ago</Text>
               </View>
             </View>
           </View>
