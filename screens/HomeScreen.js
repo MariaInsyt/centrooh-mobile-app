@@ -17,7 +17,7 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 
 import moment from "moment";
 
-const Home = props => {
+const Home = (props) => {
   const { navigation } = props;
   const [modalVisible, setModalVisible] = useState(false);
   return (
@@ -84,10 +84,7 @@ const Home = props => {
         }}
       >
         <View style={styles.searchBar}>
-          <TextInput
-            style={styles.searchInput}
-            placeholder="Search here..."
-          />
+          <TextInput style={styles.searchInput} placeholder="Search here..." />
         </View>
       </View>
       <ScrollView
