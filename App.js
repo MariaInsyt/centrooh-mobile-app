@@ -13,6 +13,7 @@ import NoficationsScreen from "./screens/NoficationsScreen";
 import TermsScreen from "./screens/TermsScreen";
 import FaqsScreen from "./screens/FaqsScreen";
 import MapScreen from "./screens/MapScreen";
+import CameraScreen from "./screens/CameraScreen";
 
 const Stack = createStackNavigator();
 
@@ -74,6 +75,11 @@ function App() {
           options={{ headerShown: false }}
           name="Map"
           component={MapScreen}
+        />
+        <Stack.Screen
+          options={{ headerShown: false }}
+          name="Camera"
+          component={CameraScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>

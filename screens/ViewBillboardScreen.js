@@ -21,7 +21,7 @@ const ViewBillboardScreen = (props) => {
     >
       <StatusBar></StatusBar>
       <ScrollView style={[styles.wholePage]}>
-        <View style={{ flexDirection: "row", justifyContent: 'space-between',}}>
+        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
           <TouchableOpacity
             style={styles.backBtn}
             onPress={() => navigation.navigate("Home")}

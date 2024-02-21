@@ -62,13 +62,13 @@ const MapScreen = (props) => {
       >
         <View style={{ flexDirection: "row" }}>
           <View style={styles.button1Style}>
-            <TouchableOpacity style={styles.ListBtn} disabled={true}>
+            <TouchableOpacity style={styles.ListBtn} onPress={() => navigation.navigate("Home")}>
               <Text>List</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.button2Style}>
             <TouchableOpacity
-              onPress={() => navigation.navigate("Map")}
+              disabled={true}
               style={styles.loginBtn}
             >
               <Text>Map</Text>
