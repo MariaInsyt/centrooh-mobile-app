@@ -75,7 +75,13 @@ const Profile = (props) => {
             </View>
           </View>
         </Modal>
-        <View style={{ flexDirection: "row", backgroundColor: "#041123" }}>
+        <View
+          style={{
+            flexDirection: "row",
+            backgroundColor: "#041123",
+            justifyContent: "space-between",
+          }}
+        >
           <TouchableOpacity
             style={styles.backBtn}
             onPress={() => navigation.navigate("Home")}
@@ -87,12 +93,10 @@ const Profile = (props) => {
               marginTop: 30,
               fontWeight: "bold",
               fontSize: 20,
-              marginLeft: 20,
               color: "white",
             }}
           >
-            {" "}
-            Tony Stark{" "}
+            Tony Stark
           </Text>
           <Pressable
             style={styles.userBtn}
@@ -136,7 +140,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderRadius: 50,
     marginTop: 10,
-    marginRight: 63,
     marginLeft: 20,
     marginBottom: 10,
     backgroundColor: "white",
@@ -148,8 +151,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderRadius: 50,
     marginTop: 10,
-    marginLeft: 75,
     backgroundColor: "white",
+    marginRight: 20,
   },
   userIcon: {
     borderRadius: 125,

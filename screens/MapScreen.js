@@ -60,17 +60,17 @@ const MapScreen = (props) => {
           borderTopColor: "white",
         }}
       >
-        <View style={{ flexDirection: "row" }}>
+        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
           <View style={styles.button1Style}>
-            <TouchableOpacity style={styles.ListBtn} onPress={() => navigation.navigate("Home")}>
+            <TouchableOpacity
+              style={styles.ListBtn}
+              onPress={() => navigation.navigate("Home")}
+            >
               <Text>List</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.button2Style}>
-            <TouchableOpacity
-              disabled={true}
-              style={styles.loginBtn}
-            >
+            <TouchableOpacity disabled={true} style={styles.loginBtn}>
               <Text>Map</Text>
             </TouchableOpacity>
           </View>
@@ -147,7 +147,10 @@ const MapScreen = (props) => {
             }}
           >
             <Marker
-              coordinate={{ latitude: 0.34025604342941695, longitude: 32.588991836490706 }}
+              coordinate={{
+                latitude: 0.34025604342941695,
+                longitude: 32.588991836490706,
+              }}
               title="Marker"
               description="This is a marker"
             />
@@ -174,7 +177,7 @@ const styles = StyleSheet.create({
   button2Style: {
     paddingTop: 12,
     width: 120,
-    marginLeft: 140,
+    paddingRight: 10,
   },
   loginBtn: {
     borderRadius: 5,

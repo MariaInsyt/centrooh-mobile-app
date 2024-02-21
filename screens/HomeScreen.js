@@ -62,7 +62,7 @@ const Home = (props) => {
           borderTopColor: "white",
         }}
       >
-        <View style={{ flexDirection: "row" }}>
+        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
           <View style={styles.button1Style}>
             <TouchableOpacity style={styles.ListBtn} disabled={true}>
               <Text>List</Text>
@@ -244,7 +244,7 @@ const styles = StyleSheet.create({
   button2Style: {
     paddingTop: 12,
     width: 120,
-    marginLeft: 140,
+    paddingRight: 10,
   },
   loginBtn: {
     borderRadius: 5,
