@@ -1,6 +1,5 @@
 import {
   StyleSheet,
-  StatusBar,
   Text,
   View,
   Alert,
@@ -8,6 +7,7 @@ import {
   Pressable,
   TextInput,
 } from "react-native";
+import { StatusBar } from 'expo-status-bar';
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";

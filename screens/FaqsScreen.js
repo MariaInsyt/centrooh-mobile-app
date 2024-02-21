@@ -1,4 +1,3 @@
-import {Linking} from 'react-native';
 import {
   StyleSheet,
   StatusBar,
@@ -7,21 +6,57 @@ import {
   Alert,
   Modal,
   Pressable,
-  TextInput,
 } from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import Collapsible from "react-native-collapsible";
 
-const TermsScreen = (props) => {
+const Accordion = ({ title, content }) => {
+  const [collapsed, setCollapsed] = useState(true);
+
+  return (
+    <View style={{ marginVertical: 10, marginLeft: 20 }}>
+      <TouchableOpacity
+        onPress={() => setCollapsed(!collapsed)}
+        style={{
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center",
+          padding: 10,
+          backgroundColor: "#eee",
+          width: "80%",
+          marginLeft: 35,
+        }}
+      >
+        <Text style={{ fontWeight: "bold", color: "black" }}>{title}</Text>
+        <Ionicons
+          name={collapsed ? "chevron-down" : "chevron-up"}
+          size={24}
+          color="black"
+        />
+      </TouchableOpacity>
+      <Collapsible collapsed={collapsed}>
+        <View
+          style={{
+            padding: 10,
+            backgroundColor: "#f9f9f9",
+            width: "80%",
+            marginLeft: 35,
+          }}
+        >
+          <Text style={{ color: "green" }}>{content}</Text>
+        </View>
+      </Collapsible>
+    </View>
+  );
+};
+
+const FaqsScreen = (props) => {
   const { navigation } = props;
   const [modalVisible, setModalVisible] = useState(false);
-  const openWebPage = (url) => {
-    Linking.openURL(url).catch((error) =>
-      console.error("Error opening web page:", error)
-    );
-  };
+
   return (
     <SafeAreaView
       style={{
@@ -59,10 +94,10 @@ const TermsScreen = (props) => {
                 <Text>Notifications</Text>
               </Pressable>
               <Pressable
-                onPress={() => navigation.navigate("Faqs")}
+                onPress={() => navigation.navigate("Terms")}
                 style={styles.bar}
               >
-                <Text>FAQs</Text>
+                <Text>Terms and Conditions</Text>
               </Pressable>
               <Pressable
                 onPress={() => navigation.navigate("Welcome")}
@@ -101,7 +136,7 @@ const TermsScreen = (props) => {
               color: "white",
             }}
           >
-            Terms
+            FAQs
           </Text>
           <Pressable
             style={styles.userBtn}
@@ -111,42 +146,25 @@ const TermsScreen = (props) => {
           </Pressable>
           {/* <Image style={styles.image} source={require("../image/blacklogo.png")} />  */}
         </View>
+
         <View style={styles.container}>
-          <Text style={styles.header}>Terms and Conditions</Text>
-          <Text style={styles.headerText}>
-            Contrary to popular belief, Lorem Ipsum is not simply random text.
-            It has roots in a piece of classical Latin literature from 45 BC,
-            making it over 2000 years old. Richard McClintock, a Latin professor
-            at Hampden-Sydney College in Virginia, looked up one of the more
-            obscure Latin words, consectetur, from a Lorem Ipsum passage, and
-            going through the cites of the word in classical literature,
-            discovered the undoubtable source. Lorem Ipsum comes from sections
-            1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes
-            of Good and Evil) by Cicero, written in 45 BC.
-          </Text>
-          <Text style={styles.headerText}>
-            Contrary to popular belief, Lorem Ipsum is not simply random text.
-            It has roots in a piece of classical Latin literature from 45 BC,
-            making it over 2000 years old. Richard McClintock, a Latin professor
-            at Hampden-Sydney College in Virginia, looked up one of the more
-            obscure Latin words, consectetur, from a Lorem Ipsum passage, and
-            going through the cites of the word in classical literature,
-            discovered the undoubtable source. Lorem Ipsum comes from sections
-            1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes
-            of Good and Evil) by Cicero, written in 45 BC.
-          </Text>
-          <TouchableOpacity
-            onPress={() => openWebPage("https://www.insytmedia.com")}
-          >
-            <Text style={styles.Link}>View More Details</Text>
-          </TouchableOpacity>
+          {/* Example of using Collapsible for FAQ sections */}
+          <Accordion
+            title="What do you do?"
+            content="Media Monitoring and Measurment"
+          />
+          <Accordion
+            title="Where are you Located?"
+            content="Plot 4, Kanjokya Street."
+          />
+          <Accordion title="Does this really work?" content="Yes, it does. You can check out our testimonials from previous clients who have worked with us." />
         </View>
       </ScrollView>
     </SafeAreaView>
   );
 };
 
-export default TermsScreen;
+export default FaqsScreen;
 
 const styles = StyleSheet.create({
   wholePage: {
@@ -228,11 +246,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  Link: {
-    color: "blue",
-    textDecorationLine: "underline",
-    marginTop: 10,
-  },
   container: {
     backgroundColor: "#f9f9f9",
     paddingHorizontal: 6,
@@ -240,28 +253,5 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-  },
-  header: {
-    backgroundColor: "#E2F0EF",
-    paddingVertical: 12,
-    paddingHorizontal: 16,
-    justifyContent: "space-between",
-    flexDirection: "row",
-    fontSize: 25,
-    fontWeight: "bold",
-  },
-  headerText: {
-    fontSize: 17,
-    lineHeight: 20,
-    marginTop: 20,
-    textAlign: "justify",
-    marginHorizontal: 10,
-  },
-  content: {
-    backgroundColor: "#f9f9f9",
-    padding: 16,
-  },
-  contentText: {
-    fontSize: 16,
   },
 });

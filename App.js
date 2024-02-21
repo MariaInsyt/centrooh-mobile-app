@@ -11,6 +11,7 @@ import ProfileScreen from "./screens/ProfileScreen";
 import ViewBillboardScreen from "./screens/ViewBillboardScreen";
 import NoficationsScreen from "./screens/NoficationsScreen";
 import TermsScreen from "./screens/TermsScreen";
+import FaqsScreen from "./screens/FaqsScreen";
 
 const Stack = createStackNavigator();
 
@@ -62,6 +63,11 @@ function App() {
           options={{ headerShown: false }}
           name="Terms"
           component={TermsScreen}
+        />
+        <Stack.Screen
+          options={{ headerShown: false }}
+          name="Faqs"
+          component={FaqsScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>
