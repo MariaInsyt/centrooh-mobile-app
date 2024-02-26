@@ -5,19 +5,17 @@ import {
   View,
   Image,
   TextInput,
-  Button,
   StatusBar,
   TouchableOpacity,
 } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { ScrollView } from "react-native-gesture-handler";
 
-export default class LoginScreen extends Component {
+export default class SignUpScreen extends Component {
   constructor(props) {
     super(props);
   }
-
   render() {
     const { navigation } = this.props;
 
@@ -27,11 +25,7 @@ export default class LoginScreen extends Component {
           backgroundColor: "#041123",
         }}
       >
-        <StatusBar
-          animated={true}
-          backgroundColor="#041123"
-          barStyle="light-content"
-        />
+        <StatusBar style="auto" />
         <ScrollView style={[styles.wholePage]}>
           <View style={{ flexDirection: "row" }}>
             <TouchableOpacity
@@ -42,11 +36,29 @@ export default class LoginScreen extends Component {
             </TouchableOpacity>
             <Image
               style={styles.image}
-              source={require("../assets/image/logo.png")}
+              source={require("../image/logo.png")}
             />
           </View>
-          <Text style={styles.loginText}> LOG IN </Text>
+
+          <Text style={styles.registerText}> Register </Text>
           <View style={styles.container}>
+            <Text style={styles.formLabel}> First Name:</Text>
+            <View style={styles.inputView}>
+              <TextInput
+                style={styles.TextInput}
+                placeholder="Your First Name"
+                placeholderTextColor="#D9D9D9"
+              />
+            </View>
+            <Text style={styles.formLabel}> Last Name:</Text>
+            <View style={styles.inputView}>
+              <TextInput
+                style={styles.TextInput}
+                placeholder="Your Last Name"
+                placeholderTextColor="#D9D9D9"
+              />
+            </View>
+            <Text style={styles.formLabel}> Username:</Text>
             <View style={styles.inputView}>
               <TextInput
                 style={styles.TextInput}
@@ -54,6 +66,7 @@ export default class LoginScreen extends Component {
                 placeholderTextColor="#D9D9D9"
               />
             </View>
+            <Text style={styles.formLabel}> Password:</Text>
             <View style={styles.inputView}>
               <TextInput
                 style={styles.TextInput}
@@ -62,17 +75,22 @@ export default class LoginScreen extends Component {
                 secureTextEntry={true}
               />
             </View>
-            <TouchableOpacity
-              onPress={() => navigation.navigate("ForgotPassword")}
-            >
-              <Text style={styles.forgot_button}>Forgot Password?</Text>
-            </TouchableOpacity>
+
             <TouchableOpacity
               onPress={() => navigation.navigate("Home")}
               style={styles.loginBtn}
             >
-              <Text style={{ fontWeight: "bold" }}>LOGIN</Text>
+              <Text style={{ fontWeight: "bold" }}>SIGN UP</Text>
             </TouchableOpacity>
+
+            <View style={{ flexDirection: "row" }}>
+              <Text style={styles.account_button}>
+                Already have an account?{" "}
+              </Text>
+              <TouchableOpacity onPress={() => navigation.navigate("Login")}>
+                <Text style={styles.forgot_button}>Login</Text>
+              </TouchableOpacity>
+            </View>
           </View>
         </ScrollView>
       </SafeAreaView>
@@ -86,8 +104,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
-    justifyContent: "center",
-    marginTop: 180,
+    marginTop: 50,
   },
   image: {
     width: 90,
@@ -113,6 +130,15 @@ const styles = StyleSheet.create({
     marginBottom: 30,
     color: "white",
     textDecorationLine: "underline",
+    textDecorationColor: "red",
+  },
+  account_button: {
+    height: 30,
+    color: "white",
+  },
+  formLabel: {
+    color: "white",
+    justifyContent: "flex-start",
   },
   loginBtn: {
     width: "80%",
@@ -122,6 +148,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     marginTop: 40,
     backgroundColor: "#B0F5ED",
+    marginBottom: 20,
   },
   LabelView: {
     alignItems: "flex-start",
@@ -137,10 +164,10 @@ const styles = StyleSheet.create({
     marginRight: 20,
     marginLeft: 20,
   },
-  loginText: {
-    marginTop: 40,
+  registerText: {
+    marginTop: 20,
     color: "white",
-    fontSize: 30,
+    fontSize: 25,
     alignSelf: "center",
     fontWeight: "bold",
   },

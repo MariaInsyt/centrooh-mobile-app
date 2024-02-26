@@ -29,7 +29,7 @@ const SplashScreen = ({navigation}) => {
       <ScrollView style={[styles.wholePage]}>
         <View>
           <Image
-            source={require('../assets/image/logo.png')}
+            source={require('../image/logo.png')}
             style={{width: 200, height: 213, alignSelf: 'center', marginTop: 80}}
           />
           <Text style={[styles.welcomeText]}>INSYT MEDIA</Text>

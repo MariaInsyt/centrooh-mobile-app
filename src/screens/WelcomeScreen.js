@@ -19,14 +19,14 @@ const Welcome = props => {
       <ScrollView style={[styles.wholePage]}>
         <View>
           <Image
-            source={require('../assets/image/logo.png')}
+            source={require('../image/logo.png')}
             style={{width: 150, height: 150, alignSelf: 'center'}}
           />
           <Text style={[styles.welcomeText]}>WELCOME</Text>
         </View>
         <View>
           <Image
-            source={require('../assets/image/dot.gif')}
+            source={require('../image/dot.gif')}
             style={{width: 150, height: 150, alignSelf: 'center'}}
           />
         </View>

@@ -46,7 +46,7 @@ const ViewBillboardScreen = (props) => {
           }}
         >
           <Image
-            source={require("../assets/image/Kampala00460.png")}
+            source={require("../image/Kampala00460.png")}
             style={{
               width: 350,
               height: 450,

@@ -143,7 +143,7 @@ const Home = (props) => {
         >
           <View style={styles.Boxes}>
             <Image
-              source={require("../assets/image/Kampala00460.png")}
+              source={require("../image/Kampala00460.png")}
               style={{ width: 150, height: 180, marginLeft: 20, marginTop: 5 }}
             />
             <View style={{ width: 200 }}>
@@ -172,7 +172,7 @@ const Home = (props) => {
         >
           <View style={styles.Boxes}>
             <Image
-              source={require("../assets/image/kampala00869.png")}
+              source={require("../image/kampala00869.png")}
               style={{ width: 150, height: 180, marginLeft: 20, marginTop: 5 }}
             />
             <View style={{ width: 200 }}>
@@ -198,7 +198,7 @@ const Home = (props) => {
         >
           <View style={styles.Boxes}>
             <Image
-              source={require("../assets/image/Kampala00926.png")}
+              source={require("../image/Kampala00926.png")}
               style={{ width: 150, height: 180, marginLeft: 20, marginTop: 5 }}
             />
             <View style={{ width: 200 }}>
