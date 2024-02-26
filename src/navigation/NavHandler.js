@@ -13,6 +13,7 @@ import TermsScreen from "../screens/TermsScreen";
 import FaqsScreen from "../screens/FaqsScreen";
 import MapScreen from "../screens/MapScreen";
 import CameraScreen from "../screens/CameraScreen";
+import VerifyScreen from "../screens/VerifyScreen";
 
 const Stack = createStackNavigator();
 
@@ -33,6 +34,11 @@ function App() {
         options={{ headerShown: false }}
         name="Login"
         component={LoginScreen}
+      />
+      <Stack.Screen
+        options={{ headerShown: false }}
+        name="Verify"
+        component={VerifyScreen}
       />
       <Stack.Screen
         options={{ headerShown: false }}

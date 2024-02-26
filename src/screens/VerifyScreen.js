@@ -7,15 +7,22 @@ import {
   TextInput,
   StatusBar,
   TouchableOpacity,
+  Alert
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { ScrollView } from "react-native-gesture-handler";
 
-export default class LoginScreen extends Component {
+const ResendOTP = () => {
+    alert("OTP has been resent to your phone number.");
+  };
+
+export default class VerifyScreen extends Component {
   constructor(props) {
     super(props);
   }
+
+  
 
   render() {
     const { navigation } = this.props;
@@ -41,32 +48,58 @@ export default class LoginScreen extends Component {
             </TouchableOpacity>
             <Image style={styles.image} source={require("../image/logo.png")} />
           </View>
-          <Text style={styles.loginText}> LOG IN </Text>
+          <Text style={styles.loginText}> VERIFY </Text>
 
           <View style={styles.container}>
-            <View style={{ justifyContent: "flex-end", marginBottom: "3%" }}>
-              <Text style={{ color: "white" }}>Phone Number :</Text>
+            <View style={{ justifyContent: "flex-end", marginBottom: "10%" }}>
+              <Text style={{ color: "white" }}>
+                Enter 4-digit OTP sent to your phone number
+              </Text>
             </View>
-            <View style={styles.inputView}>
+            <View style={{ flexDirection: "row", justifyContent: 'space-around',}}>
               <TextInput
                 style={styles.TextInput}
-                placeholder="Your Phone Number"
                 placeholderTextColor="#D9D9D9"
+                maxLength={1}
+                keyboardType="numeric"
+                textAlign="center"
+                textAlignVertical="center"
+              />
+              <TextInput
+                style={styles.TextInput}
+                placeholderTextColor="#D9D9D9"
+                maxLength={1}
+                keyboardType="numeric"
+                textAlign="center"
+                textAlignVertical="center"
+              />
+              <TextInput
+                style={styles.TextInput}
+                placeholderTextColor="#D9D9D9"
+                maxLength={1}
+                keyboardType="numeric"
+                textAlign="center"
+                textAlignVertical="center"
+              />
+              <TextInput
+                style={styles.TextInput}
+                placeholderTextColor="#D9D9D9"
+                maxLength={1}
+                keyboardType="numeric"
+                textAlign="center"
+                textAlignVertical="center"
               />
             </View>
             <TouchableOpacity
-              onPress={() => navigation.navigate("Verify")}
+              onPress={() => navigation.navigate("Home")}
               style={styles.loginBtn}
             >
               <Text style={{ fontWeight: "bold" }}>VERIFY</Text>
             </TouchableOpacity>
 
-            <View style={{ flexDirection: "row", marginTop: "3%"  }}>
-              <Text style={styles.account_button}>
-                Don't have an account?{" "}
-              </Text>
-              <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
-                <Text style={styles.forgot_button}>Sign Up</Text>
+            <View style={{ flexDirection: "row", marginTop: "3%" }}>
+              <TouchableOpacity onPress={ResendOTP}>
+              <Text style={styles.account_button}>Resend OTP</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -100,9 +133,11 @@ const styles = StyleSheet.create({
   },
   TextInput: {
     height: 50,
-    flex: 1,
+    width: 50,
     padding: 10,
     marginLeft: 20,
+    backgroundColor: "#97AACE",
+    borderRadius: 5,
   },
   forgot_button: {
     height: 30,
@@ -116,7 +151,7 @@ const styles = StyleSheet.create({
     height: 50,
     alignItems: "center",
     justifyContent: "center",
-    marginTop: '25%',
+    marginTop: "25%",
     backgroundColor: "#B0F5ED",
   },
   LabelView: {
